@@ -2,7 +2,7 @@
   <img  height="200"
     src="./logo.jpg">
   <h1>jest-github-reporter</h1>
-  <p>See jest test errors directly in pull requests.</p>
+  <p>See jest test errors directly in pull requests</p>
 </div>
 
 ## Highlights
