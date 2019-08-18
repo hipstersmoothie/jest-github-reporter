@@ -1,7 +1,7 @@
 {
   "name": "jest-github-reporter",
   "version": "0.0.1",
-  "description": "Report tests failures from Jest in GitHub",
+  "description": "Report tests failures from Jest in GitHub.",
   "main": "index.js",
   "repository": "hipstersmoothie/jest-github-reporter",
   "author": "Andrew Lisowski <lisowski54@gmail.com>",
