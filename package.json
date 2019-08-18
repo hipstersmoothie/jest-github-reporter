@@ -12,6 +12,7 @@
     "test:example": "jest --testLocationInResults example/",
     "release": "auto shipit"
   },
+  "keywords": ["jest", "reporter", "github", "check", "annotation"],
   "devDependencies": {
     "@types/env-ci": "^3.1.0",
     "@types/jest": "^24.0.17",
