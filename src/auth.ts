@@ -3,7 +3,9 @@ import { App } from '@octokit/app';
 import Octokit from '@octokit/rest';
 import envCi from 'env-ci';
 
-const APP_ID = process.env.APP_ID ? Number(process.env.APP_ID) : 38833;
+const APP_ID = process.env.JEST_APP_ID
+  ? Number(process.env.JEST_APP_ID)
+  : 38833;
 /**
  * Before you say anything I *know* this is horribly insecure.
  *
@@ -18,7 +20,7 @@ const APP_ID = process.env.APP_ID ? Number(process.env.APP_ID) : 38833;
  * messing with a users checks, which is not too risky.
  */
 const PRIVATE_KEY =
-  process.env.PRIVATE_KEY ||
+  process.env.JEST_PRIVATE_KEY ||
   `-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAwKPGnXvRdbkXXaIzw2YV4ykKCx6Lx1N+FAByUvQ5k7XaaSsi
 X7MFx3XJlUVMNf47ur5NQ2KjkDqA4Q9alb99yxUzSnsLBsHWQKEUZKmP86dqe2Ku
