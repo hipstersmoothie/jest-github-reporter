@@ -1,12 +1,11 @@
 import envCi from 'env-ci';
 import execa from 'execa';
 import path from 'path';
+import stripAnsi from 'strip-ansi';
 import Octokit from '@octokit/rest';
 
 import auth from './auth';
-import StdIo from './StdIo';
 
-const stdio = new StdIo();
 const { isCi, ...env } = envCi();
 const [owner = 'hipstersmoothie', repo = 'jest-github-reporter'] =
   'slug' in env ? env.slug.split('/') : [];
@@ -14,14 +13,11 @@ const [owner = 'hipstersmoothie', repo = 'jest-github-reporter'] =
 function createAnnotations(results: jest.TestResult[]) {
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
 
-  // stdio.log(JSON.stringify(results));
-
   for (const result of results) {
     const { testFilePath, testResults } = result;
 
     for (const failure of testResults) {
       if ('location' in failure) {
-        failure;
         const { location: { line }, failureMessages } = failure as {
           failureMessages: string[];
           location: { column: number; line: number };
@@ -32,7 +28,7 @@ function createAnnotations(results: jest.TestResult[]) {
           start_line: line,
           end_line: line,
           annotation_level: 'failure',
-          message: failureMessages.join('\n')
+          message: failureMessages.map(stripAnsi).join('\n')
         });
       }
     }
@@ -42,41 +38,41 @@ function createAnnotations(results: jest.TestResult[]) {
 }
 
 async function addCheck(results: jest.TestResult[], errorCount: number) {
-  // if (!isCi) {
-  //   return;
-  // }
+  if (!isCi) {
+    return;
+  }
 
   const annotations = createAnnotations(results);
   const HEAD = await execa('git', ['rev-parse', 'HEAD']);
-  // const octokit = await auth();
-  // const summary =
-  //   (errorCount > 0 && 'Your project seems to have some errors.') ||
-  //   'Your project passed lint!';
+  const octokit = await auth();
+  const summary =
+    (errorCount > 0 && 'Your project seems to have some errors.') ||
+    'Your project passed lint!';
 
-  // stdio.log(JSON.stringify(annotations, null, 2));
-
-  // await octokit.checks.create({
-  //   owner,
-  //   repo,
-  //   name: 'Lint',
-  //   head_sha: HEAD.stdout,
-  //   conclusion: (errorCount > 0 && 'failure') || 'success',
-  //   output: {
-  //     title: 'Jest Results',
-  //     summary,
-  //     annotations
-  //   }
-  // });
+  await octokit.checks.create({
+    owner,
+    repo,
+    name: 'Test',
+    head_sha: HEAD.stdout,
+    conclusion: (errorCount > 0 && 'failure') || 'success',
+    output: {
+      title: 'Jest Results',
+      summary,
+      annotations
+    }
+  });
 }
 
 class GitHubReporter {
+  // eslint-disable-next-line class-methods-use-this
   async onRunComplete(
     contexts: Set<jest.Test['context']>,
     testResult: ReturnType<jest.TestResultsProcessor>
   ) {
     if (testResult.numFailedTests > 0) {
       await addCheck(testResult.testResults, testResult.numFailedTests);
-      stdio.log('Successfully posted test results to github.');
+      // eslint-disable-next-line no-console
+      console.log('Successfully posted test results to github.');
     }
   }
 }

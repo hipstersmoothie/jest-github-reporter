@@ -1,39 +1,71 @@
-<h1 align="center">
-  <p>Jest Skipped Reporter</p>
-  <img src="http://dp.hanlon.io/0V3B041h3D25/skipped.png" height="150" width="300"/>
-</h1>
-Report skipped tests in Jest
+<div align="center">
+  <img  height="200"
+    src="./logo.png">
+  <h1>jest-github-reporter</h1>
+  <p>See jest test errors directly in pull requests.</p>
+</div>
 
-## Installation
+## Highlights
 
-Using yarn:
+- Report your jest results as annotations using the [GitHub Checks API](https://developer.github.com/v3/checks/)
+- Only runs in CI environment
 
-```bash
-$ yarn add -D jest-skipped-reporter
-```
+![Example of annotations being included in a pull request](./example.png)
 
-Using npm:
+## Install
 
-```bash
-$ npm i -D jest-skipped-reporter
+```sh
+npm install --save-dev jest-github-reporter
+# or
+yarn add -D jest-github-reporter
 ```
 
 ## Usage
 
-Jest CLI:
+You will need to install [the github app](https://github.com/apps/jest-results) to your repo.
 
-```bash
-jest --reporters jest-skipped-reporter
-```
-
-Jest Config:
+Then just use the reporter and run jest with the `--testLocationInResults` flag and it will test errors PRs!
 
 ```json
 {
-  "reporters": ["jest-skipped-reporter"]
+   "reporters": [
+     "default",
+      "./dist/index.js"
+  ]
 }
 ```
 
-## Licence
+```sh
+jest --testLocationInResults file.js
+```
 
-MIT
+## Using you own GitHub App
+
+You might not want to use our github app for the formatter.
+
+Reasons:
+
+1. You think they way we exposed the keys is bad
+2. You are on Github Enterprise and cannot use the public app
+
+In these situations all you need to do is create a GitHub app and set a few environment variables.
+
+### 1. Create a GitHub app
+
+Go to [this page](https://github.com/settings/apps) to create a new GitHub app. You need to set the following fields:
+
+- `name` - The name that shows for your app in the checks reports
+- `Homepage URL` - You can set this to anything. Ours is set to `https://github.com`
+- `Webhook URL` - You can set this to anything. Ours is set to `https://github.com`
+
+Then hit `Save Changes` and you're all done setting up your GitHub app.
+
+### 2. Set `APP_ID` environment variable
+
+Your GitHub application's ID. This can be found at the top of your GitHub app's edit page.
+
+### 3. Set `PRIVATE_KEY` environment variable
+
+The private RSA key for your application. The prompt to generate the RSA key is at the bottom of your GitHub app's edit page.
+
+Once you have generated a key, open the file that is downloaded and copy to text into the `PRIVATE_KEY` environment variable.
