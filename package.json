@@ -1,21 +1,33 @@
 {
   "name": "jest-github-reporter",
   "version": "0.0.1",
-  "description": "Report tests failures from Jest in GitHub",
-  "main": "index.js",
+  "description": "Report tests failures from Jest in GitHub.",
+  "main": "dist/index.js",
   "repository": "hipstersmoothie/jest-github-reporter",
   "author": "Andrew Lisowski <lisowski54@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "lint": "eslint src --ext .ts,.js --format './dist/index.js'",
-    "test:example": "jest --testLocationInResults example/"
+    "lint": "eslint src --ext .ts",
+    "test:example": "jest --testLocationInResults example/",
+    "release": "auto shipit"
   },
   "devDependencies": {
     "@types/env-ci": "^3.1.0",
     "@types/jest": "^24.0.17",
     "@types/lru-cache": "^5.1.0",
     "@types/node": "^12.7.2",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "auto": "^7.3.2",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsdoc": "^15.8.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.3",
@@ -28,7 +40,8 @@
     "@octokit/request": "^5.0.2",
     "@octokit/rest": "^16.28.7",
     "env-ci": "^4.1.1",
-    "execa": "^2.0.4"
+    "execa": "^2.0.4",
+    "strip-ansi": "^5.2.0"
   },
   "lint-staged": {
     "*.{js,css,md}": ["prettier --write", "git add"]
@@ -39,5 +52,8 @@
   "jest": {
     "testLocationInResults": true,
     "reporters": ["./dist/index.js"]
+  },
+  "auto": {
+    "plugins": ["npm", "released"]
   }
 }

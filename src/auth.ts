@@ -12,46 +12,47 @@ const APP_ID = process.env.APP_ID ? Number(process.env.APP_ID) : 38833;
  * env vars.
  *
  * How could this go wrong? Well this PRIVATE_KEY only creates jwt
- * tokens that work on people who have installed the ESLint Results
+ * tokens that work on people who have installed the Jest Results
  * App. If an attacker got ahold of the token they could only read repo
  * metadata and read/write checks. So the attack surface is really only
  * messing with a users checks, which is not too risky.
  */
 const PRIVATE_KEY =
   process.env.PRIVATE_KEY ||
-  `
------BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEArZbSLA/1PzHxdDbSlOBlCHmcMye/09/d+RYS8egfUbgtVfbR
-PEEwQfsA8YEeQbNDGbdagoxjwwCNs0p6oswrrvynRtHJq7yIsQpF9p6M/yaTXuS4
-+fofJ36C7nrczZ7e6h9tSeA5Q7f0fq5FOZiTMzT7Cqa1c5APVEUox/BqiBmcErhM
-eUGHD+Loe73O7LpI9+KBYZLuEl5YFo/PBWmrDEZCJOThQxHZ94O+kns3nnpV7xSs
-UlO6+p9b95KRbg+CyCAASl9LE/TX+Th4VFJy4wCSZAwkctdaKDfmKZbcCEVIBLdH
-NipnZNSPspwKfDOtcim98YsArU4zKR0GxrHR0QIDAQABAoIBAQCpKnC5ZffPVSGD
-6qU/Voq/PpwdMiB8Hw9X3c4qltZmsgDkZHq1qKWZtz3NHNJanpLGretzi9Lwx0pQ
-LkXi/uuXRTrTBkDtrvba6TMTSqIHSRWXBXjKi5juyRhZxbwGWkvMh0HfG7dSqiOH
-jNeDcJAK+Bep4pqz+vElY5yBdGatKATcx0IaI0mcrVKvtxlptjs1kJH4VWJ0xml8
-74qNLfCRaPa95oh/vXb9P+a0QjnctHiGaEDdpRmgQE0A2SsZ3Ni8supSzfIRdKqk
-3ClrzlHf8z3mQvOsIFzmoHwCEL3m8+AXcQ0gm/7vZ0hCmQepLQXYEnxr9TAtykmY
-aHBADWv9AoGBANnJrPjMEcKEKFEdwif+D5pMEAjj5Kar1ynxxMwGEwBhUB7LmSKe
-WybLaSu1xtYnjapcTz1esefOU8o66bLAE602nRmew+/DMHtCaZgqzAMZyqS351ZH
-RpkYeSjLXxoCzVxBbdGLGa6Fa1unijAcJsQwVk/xTIv5tlLUIZ72j8WDAoGBAMwL
-4nl1Gr/DltbrRgOcEYlPc3mhM4AnX5Kowlb5GYAlY8gFAfMiqd7M0n34Vpv/m3HK
-K9ZNiPvzzlwtUzlcJVeUlUZwQByRRzWtykbmW80klYYPIUxfQ8Yo/vqKfJ8Cg+O/
-uRTSAHI3XWd0Xg3p2Z3R6n/pkw0WF5N9T0oJhH8bAoGBANiTKaOwq+iXq9Aem7lR
-eQqjoT52AieMs0dO2blaQQMbwqUdKoe2mkaV+VwyRC0q4EIN0e7hgGFYWRK+SzAq
-umaB7PBRZd/EZy3r+T4NMRvURiRPjYnLD3WnVLUwqL4hEz8vAZpjjYJzwzM+BLmb
-BSIMP4j4GHsKNDliIp0F7CspAoGANRf+lTYYgL+HF2Ne839/vKf01zhP60/TeZj6
-AKGOth6EiT5sVHS3mObY+rhM6QiozQIbSAci1tSI5MlSd4F3ogNimFKLDCPtUJVp
-Jeu5BXc4hQqY0oOTYhO2zUCNzt5brT5tDXLbdNzdLBdGhf5MhtlhWGlRvzz5Y4Je
-yFgTpvMCgYEAg91o6HlwwazvzaQL7sMKUi+PW1rkckooKm+hsxabI0bO3auhVibx
-BU5ZeYjMfqiOpbXmjcmQ+1BB9zOI+Tf79w82zwmKWmagl+m5/Jx9nmYQXeXMoVAC
-Pt4SCU1SY+eXYO+nAy6oKEUx0dHFfzj5PZFZr5iP9DDZsrdz0ZXsdn4=
------END RSA PRIVATE KEY-----`;
+  `-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAwKPGnXvRdbkXXaIzw2YV4ykKCx6Lx1N+FAByUvQ5k7XaaSsi
+X7MFx3XJlUVMNf47ur5NQ2KjkDqA4Q9alb99yxUzSnsLBsHWQKEUZKmP86dqe2Ku
+a2XG+GYtUnaaRrAsj8BWqFZ1Hq38P8ge8BIA51+pgpYOsX3imT5PhJfloeMXCMQ4
+GU+nJf8s0DzxRav3THzDKfzbQ487B1CbcTcEM70v+lFCKX36AzssYnKiEEyDOlUO
+6HkwQB+CTvQgB51JatmFFFZfCgnjYPQHtO6YqFWn8QBF0s9wHhoHWBNx+ZKoOVKw
+qOKcFwYmHdAzpuLmt0gGp4ewBswImJVpsekBQQIDAQABAoIBADp5/LKVgXHQ68za
+jggElyRLsubJMPki2STNNecEh+3UyCYgl+ChAWIY2UZcsNO7BvqbBe0spiYD/FdV
+R9QpOtBI8Tbsvt4gPR+FRiGAb1gxO9uUiwnC7XE94wgjRJWsqPpCEowrIoZbnjTm
+VK3faTLTESu4zWEHq5+FELJZQbWwJ/SjJkA1viizBLSLCnhlMzsabHZHKtLPvZJ0
+tnRPVidp1hzQzDOIQBdojUvMZ3evLqYL1pwoRnqitotuchDprTUqGfBLFy1A+1iK
+QqPpHnDe8oEeITOi8cJhOmyk2ZmkSIyRmqZi9Cf/lItQBKws8aHUIoex7AfpXK30
+1mP1wAECgYEA+WIhAzEj7wXu/J+fPfZs0eW8htGtxQTQYpLztfxKGqS4spGJcj89
+ga0MNvGAexNMsWW+n9SHNhVuJB7XSuxMrvXPuMPfwT1u910Ah/Wh+61saAOHRA+O
+3c+OyI2ojTchsoC3k1VZ0RTeDZXL870+wLmf1MqEOGovvnUx10oGfcECgYEAxcA7
+JJko/IbkCECtxcupIieZJdELDSkRdFZgVVHZcxwujJxyj2O/YZB31c6AaCbWnIO3
+s98SPhLLS4b10pEqR8FbCKKm9MiqWybAeWn14IM4EAgGRReWquTOWv/bDLjKphTr
+oMm4lBm1dXrOfIuNyTOAJPIjJvtUCjfAroaCY4ECgYBllKIL0c1oREt3nXFY5PKo
+gOLNK8WTdgWH0YHyBAUPWz9chUmuPrJICvvpuW9zMoZP0DjYk9JLpmkJz4I0o5IM
+xlXJVgfjh6mWmsxnlRdZE+gPajiD8a5pDW2EpacddnKEakfcfKysLMrST80WyGQy
+TqobHC7FaANwmf4mSqHgQQKBgBwgCAlfgzXPVZVa5ZwxKCAEc8KuJZ08jw/1zQO1
+fXDivDghdCWysSCGNJUDJr4pb/KYxULe4jBT6fgW/NVy8gl8lZ73yzkbZSdLrqpW
+CLNi1lFpYsLm5PXvTu4gX55ClgfjB9Q5fHgL5AQOcFnEW2kXWw1mJtu/eSdu4Iex
+98+BAoGAOF4GUl/Aa6rJNgjBUNZjUomV+FJL3htuu1b3t2tLGnozPxFS6RPMWLvd
+AMBi+Wv6FzuOhZx6aIMlz/LEgC+s9o3S+mSlsp0/UoNcy7j1zSosb4C8QqXbTGRG
+sUdulK+rOI5aef3CRA2/j6V1expVZF/ttOsmybZcuUcSGxN1N5Q=
+-----END RSA PRIVATE KEY-----
+`;
 
-const { isCi, ...env } = envCi();
+const env = envCi();
 const app = new App({ id: APP_ID, privateKey: PRIVATE_KEY });
 const jwt = app.getSignedJsonWebToken();
-const [owner = '', repo = ''] = 'slug' in env ? env.slug.split('/') : [];
+const [owner = 'hipstersmoothie', repo = 'jest-github-reporter'] =
+  'slug' in env ? env.slug.split('/') : [];
 
 export default async function authenticateApp() {
   const { data } = await request('GET /repos/:owner/:repo/installation', {
