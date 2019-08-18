@@ -36,7 +36,7 @@ jobs:
       run: |
         git checkout "${GITHUB_REF:11}"
         git remote rm origin
-        git remote add origin "https://$GH_TOKEN@github.com/hipstersmoothie/eslint-formatter-github.git"
+        git remote add origin "https://$GH_TOKEN@github.com/hipstersmoothie/jest-github-reporter.git"
         git fetch origin
         git branch --set-upstream-to origin/master
     - name: Use Node.js 12.x
