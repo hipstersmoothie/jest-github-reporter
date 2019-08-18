@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "eslint src --ext .ts",
-    "test:example": "jest --testLocationInResults example/"
+    "test:example": "jest --testLocationInResults example/",
+    "release": "auto shipit"
   },
   "devDependencies": {
     "@types/env-ci": "^3.1.0",
