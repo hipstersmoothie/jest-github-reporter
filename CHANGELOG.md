@@ -1,3 +1,15 @@
+# v0.0.4 (Sun Aug 18 2019)
+
+#### ⚠️  Pushed to master
+
+- add keywords  ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.0.3 (Sun Aug 18 2019)
 
 #### 🐛  Bug Fix
