@@ -1349,6 +1349,18 @@ cosmiconfig@5.2.1, cosmiconfig@^5.2.1:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
+create-check@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.2.3.tgz#35e8d6cf5d86da481fd2b173e0dab2e636ae5355"
+  integrity sha512-NMCcM4xD2Dqk8NhKg5kdTRyeq7q7TK93U0tjBolj+fx6zgKUgspZle9f837zeWyF3aAaNeZxWTO//Czp/HqEtA==
+  dependencies:
+    "@octokit/app" "^4.1.0"
+    "@octokit/request" "^5.0.2"
+    "@octokit/rest" "^16.28.7"
+    env-ci "^4.1.1"
+    execa "^2.0.4"
+    lodash.chunk "^4.2.0"
+
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
