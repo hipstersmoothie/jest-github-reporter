@@ -3,9 +3,7 @@ import stripAnsi from 'strip-ansi';
 import Octokit from '@octokit/rest';
 import createCheck from 'create-check';
 
-const APP_ID = process.env.JEST_APP_ID
-  ? Number(process.env.JEST_APP_ID)
-  : 38833;
+const APP_ID = 38833;
 /**
  * Before you say anything I *know* this is horribly insecure.
  *
@@ -19,9 +17,7 @@ const APP_ID = process.env.JEST_APP_ID
  * metadata and read/write checks. So the attack surface is really only
  * messing with a users checks, which is not too risky.
  */
-const PRIVATE_KEY =
-  process.env.JEST_PRIVATE_KEY ||
-  `-----BEGIN RSA PRIVATE KEY-----
+const PRIVATE_KEY = `-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAwKPGnXvRdbkXXaIzw2YV4ykKCx6Lx1N+FAByUvQ5k7XaaSsi
 X7MFx3XJlUVMNf47ur5NQ2KjkDqA4Q9alb99yxUzSnsLBsHWQKEUZKmP86dqe2Ku
 a2XG+GYtUnaaRrAsj8BWqFZ1Hq38P8ge8BIA51+pgpYOsX3imT5PhJfloeMXCMQ4
@@ -58,7 +54,10 @@ function createAnnotations(results: jest.TestResult[]) {
 
     for (const failure of testResults) {
       if ('location' in failure) {
-        const { location: { line }, failureMessages } = failure as {
+        const {
+          location: { line },
+          failureMessages
+        } = failure as {
           failureMessages: string[];
           location: { column: number; line: number };
         };
@@ -89,8 +88,10 @@ class GitHubReporter {
         name: 'Test',
         annotations: createAnnotations(testResult.testResults),
         errorCount: testResult.numFailedTests,
-        appId: APP_ID,
-        privateKey: PRIVATE_KEY
+        appId: process.env.JEST_APP_ID
+          ? Number(process.env.JEST_APP_ID)
+          : APP_ID,
+        privateKey: process.env.JEST_PRIVATE_KEY || PRIVATE_KEY
       });
     }
   }
