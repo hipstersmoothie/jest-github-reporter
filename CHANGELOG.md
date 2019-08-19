@@ -1,3 +1,15 @@
+# v0.2.2 (Mon Aug 19 2019)
+
+#### 🐛  Bug Fix
+
+- load env vars in function so user can set them [#8](https://github.com/hipstersmoothie/jest-github-reporter/pull/8) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.2.1 (Mon Aug 19 2019)
 
 #### 🐛  Bug Fix
