@@ -440,7 +440,7 @@
     once "^1.4.0"
     universal-user-agent "^2.1.0"
 
-"@octokit/request@^5.0.0", "@octokit/request@^5.0.2":
+"@octokit/request@^5.0.0":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@octokit/request/-/request-5.0.2.tgz#59a920451f24811c016ddc507adcc41aafb2dca5"
   integrity sha512-z1BQr43g4kOL4ZrIVBMHwi68Yg9VbkRUyuAgqCp1rU3vbYa69+2gIld/+gHclw15bJWQnhqqyEb7h5a5EqgZ0A==
@@ -918,6 +918,11 @@ auto@^7.3.2:
     dedent "^0.7.0"
     signale "^1.4.0"
 
+await-to-js@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/await-to-js/-/await-to-js-2.1.1.tgz#c2093cd5a386f2bb945d79b292817bbc3f41b31b"
+  integrity sha512-CHBC6gQGCIzjZ09tJ+XmpQoZOn4GdWePB4qUweCaKNJ0D3f115YdhmYVTZ4rMVpiJ3cFzZcTYK1VMYEICV4YXw==
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -1339,14 +1344,14 @@ cosmiconfig@5.2.1, cosmiconfig@^5.2.1:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-check@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.2.3.tgz#35e8d6cf5d86da481fd2b173e0dab2e636ae5355"
-  integrity sha512-NMCcM4xD2Dqk8NhKg5kdTRyeq7q7TK93U0tjBolj+fx6zgKUgspZle9f837zeWyF3aAaNeZxWTO//Czp/HqEtA==
+create-check@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.3.0.tgz#716aec3a47576137e0332466af3c15e2c6fdc7bb"
+  integrity sha512-ccxeV7G5OI2tTOLRXH+dkarJQdysWmXMUGlMRHeP7NxNR88hKphLSSBgOf1C+kJcEdn50U8WHEbPaM76XihGfQ==
   dependencies:
     "@octokit/app" "^4.1.0"
-    "@octokit/request" "^5.0.2"
     "@octokit/rest" "^16.28.7"
+    await-to-js "^2.1.1"
     env-ci "^4.1.1"
     execa "^2.0.4"
     lodash.chunk "^4.2.0"
