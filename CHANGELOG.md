@@ -1,3 +1,15 @@
+# v0.2.0 (Mon Aug 19 2019)
+
+#### 🚀  Enhancement
+
+- switch to create-check [#3](https://github.com/hipstersmoothie/jest-github-reporter/pull/3) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.1.0 (Sun Aug 18 2019)
 
 #### 🚀  Enhancement
