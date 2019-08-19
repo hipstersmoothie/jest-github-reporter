@@ -531,11 +531,6 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/env-ci@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@types/env-ci/-/env-ci-3.1.0.tgz#8b8b388641c641fa4eb51862cbb018db013aeb68"
-  integrity sha512-oJTxA/GmZavFFr6wtuFcmOUH4Lfj0RU9icnYBzp8gXDj7p8rCr5XRR2W6VzYOoCuEJusQsRUjSMr+3xOJ1S6yw==
-
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -591,11 +586,6 @@
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha512-Il2DtDVRGDcqjDtE+rF8iqg1CArehSK84HZJCT7AMITlyXRBpuPhqGLDQMowraqqu1coEaimg4ZOqggt6L6L+A==
-
-"@types/lru-cache@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@types/lru-cache/-/lru-cache-5.1.0.tgz#57f228f2b80c046b4a1bd5cac031f81f207f4f03"
-  integrity sha512-RaE0B+14ToE4l6UqdarKPnXwVDuigfFv+5j9Dze/Nqr23yyuqdNvzcZi3xB+3Agvi5R4EOgAksfv3lXX4vBt9w==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -1348,6 +1338,18 @@ cosmiconfig@5.2.1, cosmiconfig@^5.2.1:
     is-directory "^0.3.1"
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
+
+create-check@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.2.3.tgz#35e8d6cf5d86da481fd2b173e0dab2e636ae5355"
+  integrity sha512-NMCcM4xD2Dqk8NhKg5kdTRyeq7q7TK93U0tjBolj+fx6zgKUgspZle9f837zeWyF3aAaNeZxWTO//Czp/HqEtA==
+  dependencies:
+    "@octokit/app" "^4.1.0"
+    "@octokit/request" "^5.0.2"
+    "@octokit/rest" "^16.28.7"
+    env-ci "^4.1.1"
+    execa "^2.0.4"
+    lodash.chunk "^4.2.0"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
