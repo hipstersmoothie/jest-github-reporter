@@ -7,7 +7,7 @@ class GitHubReporter {
     testResult: ReturnType<jest.TestResultsProcessor>
   ) {
     if (testResult.numFailedTests > 0) {
-      await createCheck(testResult.testResults, testResult.numFailedTests);
+      await createCheck(testResult);
     }
   }
 }
