@@ -62,13 +62,15 @@ function createAnnotations(results: jest.TestResult[]) {
           location: { column: number; line: number };
         };
 
-        annotations.push({
-          path: path.relative(process.cwd(), testFilePath),
-          start_line: line,
-          end_line: line,
-          annotation_level: 'failure',
-          message: failureMessages.map(stripAnsi).join('\n')
-        });
+        if (failureMessages.length > 0) {
+          annotations.push({
+            path: path.relative(process.cwd(), testFilePath),
+            start_line: line,
+            end_line: line,
+            annotation_level: 'failure',
+            message: failureMessages.map(stripAnsi).join('\n')
+          });
+        }
       }
     }
   }
