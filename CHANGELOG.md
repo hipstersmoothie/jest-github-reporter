@@ -1,3 +1,25 @@
+# v0.3.0 (Tue Aug 20 2019)
+
+#### 🚀  Enhancement
+
+- expose configured create-check [#13](https://github.com/hipstersmoothie/jest-github-reporter/pull/13) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Dependency Updates
+
+- Update dependency eslint to v6.2.1 [#12](https://github.com/hipstersmoothie/jest-github-reporter/pull/12) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-plugin-jsdoc to v15.8.3 [#11](https://github.com/hipstersmoothie/jest-github-reporter/pull/11) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-config-prettier to v6.1.0 [#10](https://github.com/hipstersmoothie/jest-github-reporter/pull/10) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency @types/jest to v24.0.18 [#9](https://github.com/hipstersmoothie/jest-github-reporter/pull/9) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint to v6.2.0 [#7](https://github.com/hipstersmoothie/jest-github-reporter/pull/7) ([@renovate-bot](https://github.com/renovate-bot))
+- Pin dependencies [#6](https://github.com/hipstersmoothie/jest-github-reporter/pull/6) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 2
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.2.2 (Mon Aug 19 2019)
 
 #### 🐛  Bug Fix
