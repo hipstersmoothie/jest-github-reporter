@@ -1,3 +1,15 @@
+# v0.3.3 (Wed Aug 21 2019)
+
+#### 🐛  Bug Fix
+
+- Update dependency create-check to ^0.4.0 [#16](https://github.com/hipstersmoothie/jest-github-reporter/pull/16) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 1
+
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.3.2 (Wed Aug 21 2019)
 
 #### 🐛  Bug Fix
