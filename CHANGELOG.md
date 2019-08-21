@@ -1,3 +1,15 @@
+# v0.3.1 (Wed Aug 21 2019)
+
+#### 🐛  Bug Fix
+
+- only add annotation if there is a failure message [#14](https://github.com/hipstersmoothie/jest-github-reporter/pull/14) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.3.0 (Tue Aug 20 2019)
 
 #### 🚀  Enhancement
