@@ -6,9 +6,7 @@ class GitHubReporter {
     contexts: Set<jest.Test['context']>,
     testResult: ReturnType<jest.TestResultsProcessor>
   ) {
-    if (testResult.numFailedTests > 0) {
-      await createCheck(testResult);
-    }
+    await createCheck(testResult);
   }
 }
 
