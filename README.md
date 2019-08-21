@@ -24,19 +24,16 @@ yarn add -D jest-github-reporter
 
 You will need to install [the github app](https://github.com/apps/jest-results) to your repo.
 
-Then just use the reporter and run jest with the `--testLocationInResults` flag and it will test errors PRs!
+Then just run jest and it will test errors PRs!
 
 ```json
 {
-   "reporters": [
-     "default",
-      "./dist/index.js"
-  ]
+  "reporters": ["default", "./dist/index.js"]
 }
 ```
 
 ```sh
-jest --testLocationInResults file.js
+jest file.js
 ```
 
 ## Using you own GitHub App

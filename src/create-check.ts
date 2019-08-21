@@ -46,6 +46,11 @@ sUdulK+rOI5aef3CRA2/j6V1expVZF/ttOsmybZcuUcSGxN1N5Q=
 -----END RSA PRIVATE KEY-----
 `;
 
+interface Location {
+  column: number;
+  line: number;
+}
+
 function createAnnotations(results: jest.TestResult[]) {
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
 
@@ -54,23 +59,25 @@ function createAnnotations(results: jest.TestResult[]) {
 
     for (const failure of testResults) {
       if ('location' in failure) {
-        const {
-          location: { line },
-          failureMessages
-        } = failure as {
+        const { location = {} as Location, failureMessages } = failure as {
           failureMessages: string[];
-          location: { column: number; line: number };
+          location: Location;
         };
 
-        if (failureMessages.length > 0) {
+        failureMessages.forEach(message => {
+          const numbers = message.match(
+            new RegExp(`${result.testFilePath}:(\\d+):\\d+`)
+          );
+          const start_line = numbers ? Number(numbers[1]) : location.line || 0;
+
           annotations.push({
             path: path.relative(process.cwd(), testFilePath),
-            start_line: line,
-            end_line: line,
+            start_line,
+            end_line: start_line,
             annotation_level: 'failure',
             message: failureMessages.map(stripAnsi).join('\n')
           });
-        }
+        });
       }
     }
   }
