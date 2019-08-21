@@ -1,3 +1,15 @@
+# v0.3.2 (Wed Aug 21 2019)
+
+#### 🐛  Bug Fix
+
+- get failure line number from error message [#15](https://github.com/hipstersmoothie/jest-github-reporter/pull/15) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.3.1 (Wed Aug 21 2019)
 
 #### 🐛  Bug Fix
