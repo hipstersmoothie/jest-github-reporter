@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@atomist/slack-messages/-/slack-messages-1.1.1.tgz#9de42932e89065fb4fe4842978ca2d1ed3424cea"
   integrity sha512-m2OzlTDbhvzK4hgswH9Lx0cdpq1AntXu53Klz5RGkFfuoDvKsnlU7tmtVfNWtUiP0zZbGtrb/BZYH7aB6TRnMA==
 
-"@auto-it/core@^7.3.4":
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.3.4.tgz#fe4de518b646f89e9105096683d6269496c90846"
-  integrity sha512-pxiSYzVgzJTsa+ANpNOk8w6ahsnolhrOnlsO5PgW9P2cXd/Dix9lxs0qYvRNlyz0G6T6JSsZRhnyoBVyN2ZMSA==
+"@auto-it/core@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.4.0.tgz#53a6174d622091134e999ec05af4db112fda5b58"
+  integrity sha512-u8ShiZ/laZmRn5VEQpFJ4tPQcZP3x+rnUfkKBFMDvbR66vKUOuu3GIzWR74+1tEV5pHtMqYEhXmxRJdEfOR+3A==
   dependencies:
     "@atomist/slack-messages" "~1.1.0"
     "@octokit/graphql" "^4.0.0"
@@ -18,6 +18,7 @@
     "@octokit/plugin-retry" "^2.2.0"
     "@octokit/plugin-throttling" "^2.6.0"
     "@octokit/rest" "16.28.7"
+    await-to-js "^2.1.1"
     cosmiconfig "5.2.1"
     dedent "^0.7.0"
     deepmerge "^4.0.0"
@@ -35,12 +36,12 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/npm@^7.3.4":
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.3.4.tgz#6099629f42a86e8985221d0e63b02067ad27d36a"
-  integrity sha512-TOeHYgdn2AN7F2mcvylwstpZPgO5rPFUlYh991EHCbJH/LuGAG/IhtKbZLeaIoJkbbR7WD1TDCfDrlUDewTmOA==
+"@auto-it/npm@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.4.0.tgz#3f851566092e82c8d70bfc8f9dac3e31b93cdfb7"
+  integrity sha512-6CO34oxPNzGDLN+Kt5ceiGB7dVgYLe9A73FcZyocz3BwVCHmr22XQzFGpTWwFEFYJv6Vi8cIUIzyTYWVfQCaOw==
   dependencies:
-    "@auto-it/core" "^7.3.4"
+    "@auto-it/core" "^7.4.0"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
@@ -51,12 +52,12 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/released@^7.3.4":
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.3.4.tgz#7b3e7789a451ef61a697ee1d606df5449263ea8b"
-  integrity sha512-7vNm//RTj5+DvsBzClNuLrpGYHhLDAlSDYTcPrML9xAB/PnePSftGEskH8dCb0NPq9bP2eAB2NdVIDt1Hc21ww==
+"@auto-it/released@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.4.0.tgz#1d1e3d16391a32b77d79233255f72c9784f2089f"
+  integrity sha512-XrunbDo+Ua7WA9IE5RX/z+3hmw/mhBv2A9wfwyCaslmHG+IU+VWPxpZWzImghP59Gouk4x2yK8V4Pc+hG+6/HQ==
   dependencies:
-    "@auto-it/core" "^7.3.4"
+    "@auto-it/core" "^7.4.0"
     deepmerge "^4.0.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
@@ -869,14 +870,14 @@ author-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/author-regex/-/author-regex-1.0.0.tgz#d08885be6b9bbf9439fe087c76287245f0a81450"
   integrity sha1-0IiFvmubv5Q5/gh8dihyRfCoFFA=
 
-auto@7.3.4:
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-7.3.4.tgz#17a57c2516d61adac2b73070ae24b77c89069f6f"
-  integrity sha512-/x/Vt0JdHRGa6RmOH3DHeiCeNi6XUhST05bywwgfXm1INUN/ue/Ng9d/qUx/5Qj+6y9XmYpWNMlp0nvN9bGfrQ==
+auto@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-7.4.0.tgz#b95348f7d4fe61aed4245d94526191697a1417bd"
+  integrity sha512-tYKJ++zCWuARjxancI9sHT49TESAkaMcLlCKnusCVYBJ8HDKFT9ttWRavR6FvXjfQTUrXzFMuhmr9BQcTOl2mg==
   dependencies:
-    "@auto-it/core" "^7.3.4"
-    "@auto-it/npm" "^7.3.4"
-    "@auto-it/released" "^7.3.4"
+    "@auto-it/core" "^7.4.0"
+    "@auto-it/npm" "^7.4.0"
+    "@auto-it/released" "^7.4.0"
     chalk "^2.4.2"
     command-line-args "^5.1.1"
     command-line-usage "^6.0.2"
