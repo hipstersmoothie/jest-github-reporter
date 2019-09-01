@@ -29,7 +29,7 @@
     "@types/node": "12.7.2",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
-    "auto": "7.3.4",
+    "auto": "7.4.0",
     "eslint": "6.2.2",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-config-prettier": "6.1.0",
