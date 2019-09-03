@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "2.1.0",
     "@typescript-eslint/parser": "2.1.0",
     "auto": "7.4.3",
-    "auto-config-hipstersmoothie": "^1.0.4",
+    "auto-config-hipstersmoothie": "1.0.4",
     "eslint": "6.3.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-config-prettier": "6.2.0",
