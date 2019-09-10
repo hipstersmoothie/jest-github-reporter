@@ -1317,10 +1317,10 @@ cosmiconfig@5.2.1, cosmiconfig@^5.2.1:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-check@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.4.0.tgz#7d15deb1dc5a5df9e05fe4b8322620756b339390"
-  integrity sha512-4SAjAO1qnK/h4rusm78USpzAr3buJy3KbjIsVRb1vVPmiF2cuYsd52zFIYzmDvAOQwaGNCKPDG3W/0LCh7G4VQ==
+create-check@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.5.0.tgz#179e91819bd6a5fe35dd9994508bed5a30bea1cc"
+  integrity sha512-ZrcvZbv9rC38WWg3+y0goXd7A1RoWEsMdFIxVDVZo5WtvrLDos/1vTb6+ApcwQnk/iisLOC3kY0QSS7TmP1ICg==
   dependencies:
     "@octokit/app" "^4.1.0"
     "@octokit/rest" "^16.28.7"
