@@ -29,7 +29,7 @@
     "@types/node": "12.7.4",
     "@typescript-eslint/eslint-plugin": "2.2.0",
     "@typescript-eslint/parser": "2.2.0",
-    "auto": "7.4.5",
+    "auto": "7.6.0",
     "auto-config-hipstersmoothie": "1.0.4",
     "eslint": "6.3.0",
     "eslint-config-airbnb-base": "14.0.0",
