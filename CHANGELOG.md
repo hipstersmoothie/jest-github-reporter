@@ -1,3 +1,32 @@
+# v0.3.5 (Fri Feb 28 2020)
+
+#### 🐛  Bug Fix
+
+- docs: fix typo in README [#68](https://github.com/hipstersmoothie/jest-github-reporter/pull/68) ([@Naturalclar](https://github.com/Naturalclar))
+
+#### 🔩 Dependency Updates
+
+- Update dependency eslint to v6.5.1 [#49](https://github.com/hipstersmoothie/jest-github-reporter/pull/49) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency lint-staged to v9.4.1 [#50](https://github.com/hipstersmoothie/jest-github-reporter/pull/50) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-config-xo to v0.27.1 [#46](https://github.com/hipstersmoothie/jest-github-reporter/pull/46) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency auto to v7.6.2 [#48](https://github.com/hipstersmoothie/jest-github-reporter/pull/48) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency husky to v3.0.7 [#47](https://github.com/hipstersmoothie/jest-github-reporter/pull/47) ([@renovate-bot](https://github.com/renovate-bot))
+- Update typescript-eslint monorepo to v2.3.2 [#43](https://github.com/hipstersmoothie/jest-github-reporter/pull/43) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency lint-staged to v9.4.0 [#45](https://github.com/hipstersmoothie/jest-github-reporter/pull/45) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-plugin-prettier to v3.1.1 [#44](https://github.com/hipstersmoothie/jest-github-reporter/pull/44) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-plugin-jsdoc to v15.9.5 [#42](https://github.com/hipstersmoothie/jest-github-reporter/pull/42) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint to v6.5.0 [#41](https://github.com/hipstersmoothie/jest-github-reporter/pull/41) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency auto to v7.6.0 [#40](https://github.com/hipstersmoothie/jest-github-reporter/pull/40) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency @types/node to v12.7.8 [#39](https://github.com/hipstersmoothie/jest-github-reporter/pull/39) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency typescript to v3.6.3 [#38](https://github.com/hipstersmoothie/jest-github-reporter/pull/38) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 2
+
+- Jesse Katsumata ([@Naturalclar](https://github.com/Naturalclar))
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.3.4 (Tue Sep 10 2019)
 
 #### 🐛  Bug Fix
