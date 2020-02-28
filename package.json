@@ -43,7 +43,7 @@
     "jest": "24.9.0",
     "lint-staged": "9.4.1",
     "prettier": "1.18.2",
-    "typescript": "3.6.3"
+    "typescript": "3.8.3"
   },
   "lint-staged": {
     "*.{js,css,md}": [
