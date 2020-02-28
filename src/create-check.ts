@@ -64,20 +64,22 @@ function createAnnotations(results: jest.TestResult[]) {
           location: Location;
         };
 
-        failureMessages.forEach(message => {
-          const numbers = message.match(
-            new RegExp(`${result.testFilePath}:(\\d+):\\d+`)
-          );
-          const start_line = numbers ? Number(numbers[1]) : location.line || 0;
+        if (location) {
+          failureMessages.forEach(message => {
+            const numbers = message.match(
+              new RegExp(`${result.testFilePath}:(\\d+):\\d+`)
+            );
+            const start_line = numbers ? Number(numbers[1]) : location.line || 0;
 
-          annotations.push({
-            path: path.relative(process.cwd(), testFilePath),
-            start_line,
-            end_line: start_line,
-            annotation_level: 'failure',
-            message: failureMessages.map(stripAnsi).join('\n')
+            annotations.push({
+              path: path.relative(process.cwd(), testFilePath),
+              start_line,
+              end_line: start_line,
+              annotation_level: 'failure',
+              message: failureMessages.map(stripAnsi).join('\n')
+            });
           });
-        });
+        }
       }
     }
   }
