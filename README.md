@@ -36,7 +36,7 @@ Then just run jest and it will test errors PRs!
 jest file.js
 ```
 
-## Using you own GitHub App
+## Using your own GitHub App
 
 You might not want to use our github app for the formatter.
 
