@@ -1,3 +1,16 @@
+# v0.3.6 (Fri Feb 28 2020)
+
+#### 🐛  Bug Fix
+
+- Fixed TypeError: Cannot read property 'line' of null [#81](https://github.com/hipstersmoothie/jest-github-reporter/pull/81) (ajiron@liveperson.com [@joeyjiron06](https://github.com/joeyjiron06))
+
+#### Authors: 2
+
+- ajiron (ajiron@liveperson.com)
+- Joey Jiron ([@joeyjiron06](https://github.com/joeyjiron06))
+
+---
+
 # v0.3.5 (Fri Feb 28 2020)
 
 #### 🐛  Bug Fix
