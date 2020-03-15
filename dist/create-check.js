@@ -156,7 +156,6 @@ function createUncoveredLinesAnnotations(results) {
             switch (_a.label) {
                 case 0:
                     annotations = [];
-                    console.log('createUncoveredLinesAnnotations', JSON.stringify(results.coverageMap, null, 2));
                     return [4 /*yield*/, istanbul_gh_pr_uncovered_1.default({
                             coverageMap: results.coverageMap,
                             appId: getAppId(),

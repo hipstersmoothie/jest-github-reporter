@@ -101,8 +101,6 @@ function createAnnotations(results: jest.TestResult[]) {
 async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResultsProcessor>) {
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
 
-  console.log('createUncoveredLinesAnnotations', JSON.stringify(results.coverageMap, null, 2));
-
   const uncoveredPRFiles = await getUncoveredPrFiles({
     coverageMap: results.coverageMap,
     appId: getAppId(),
