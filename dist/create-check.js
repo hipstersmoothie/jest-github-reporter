@@ -149,16 +149,14 @@ function createAnnotations(results) {
     }
     return annotations;
 }
-function createUncoveredLinesAnnotations(results, config) {
+function createUncoveredLinesAnnotations(results) {
     return __awaiter(this, void 0, void 0, function () {
         var annotations, uncoveredPRFiles;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (!config.failOnUncoveredLines) {
-                        return [2 /*return*/, []];
-                    }
                     annotations = [];
+                    console.log('createUncoveredLinesAnnotations', JSON.stringify(results.coverageMap, null, 2));
                     return [4 /*yield*/, istanbul_gh_pr_uncovered_1.default({
                             coverageMap: results.coverageMap,
                             appId: getAppId(),
@@ -189,23 +187,25 @@ function createUncoveredLinesAnnotations(results, config) {
     });
 }
 exports.default = (function (results, config) { return __awaiter(void 0, void 0, void 0, function () {
-    var failureAnnotations, uncoveredLinesAnnotations, annotations;
+    var annotations, uncoveredLinesAnnotations;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                failureAnnotations = createAnnotations(results.testResults);
-                return [4 /*yield*/, createUncoveredLinesAnnotations(results, config)];
+                annotations = createAnnotations(results.testResults);
+                if (!config.failOnUncoveredLines) return [3 /*break*/, 2];
+                return [4 /*yield*/, createUncoveredLinesAnnotations(results)];
             case 1:
                 uncoveredLinesAnnotations = _a.sent();
-                annotations = __spread(failureAnnotations, uncoveredLinesAnnotations);
-                return [2 /*return*/, create_check_1.default({
-                        tool: 'Jest',
-                        name: 'Test',
-                        annotations: annotations,
-                        errorCount: annotations.length,
-                        appId: getAppId(),
-                        privateKey: getPrivatekey()
-                    })];
+                annotations.push.apply(annotations, __spread(uncoveredLinesAnnotations));
+                _a.label = 2;
+            case 2: return [2 /*return*/, create_check_1.default({
+                    tool: 'Jest',
+                    name: 'Test',
+                    annotations: annotations,
+                    errorCount: annotations.length,
+                    appId: getAppId(),
+                    privateKey: getPrivatekey()
+                })];
         }
     });
 }); });

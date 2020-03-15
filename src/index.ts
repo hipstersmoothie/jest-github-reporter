@@ -19,8 +19,6 @@ class GitHubReporter {
     contexts: Set<jest.Test['context']>,
     testResult: ReturnType<jest.TestResultsProcessor>
   ) {
-    console.log('coverageMap', JSON.stringify(testResult.coverageMap, null, 2));
-
     await createCheck(testResult, this.config);
   }
 }

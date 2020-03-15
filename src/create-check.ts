@@ -98,12 +98,10 @@ function createAnnotations(results: jest.TestResult[]) {
   return annotations;
 }
 
-async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResultsProcessor>, config: GithubReporterConfig) {
-  if (!config.failOnUncoveredLines) {
-    return [];
-  }
-
+async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResultsProcessor>) {
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
+
+  console.log('createUncoveredLinesAnnotations', JSON.stringify(results.coverageMap, null, 2));
 
   const uncoveredPRFiles = await getUncoveredPrFiles({
     coverageMap: results.coverageMap,
@@ -140,13 +138,12 @@ async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResu
 
 export default async (results: ReturnType<jest.TestResultsProcessor>, config: GithubReporterConfig) => {
 
-  const failureAnnotations = createAnnotations(results.testResults);
-  const uncoveredLinesAnnotations = await createUncoveredLinesAnnotations(results, config);
+  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = createAnnotations(results.testResults);
 
-  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [
-    ...failureAnnotations,
-    ...uncoveredLinesAnnotations
-  ];
+  if (config.failOnUncoveredLines) {
+    const uncoveredLinesAnnotations = await createUncoveredLinesAnnotations(results);
+    annotations.push(...uncoveredLinesAnnotations);
+  }
 
   return createCheck({
     tool: 'Jest',

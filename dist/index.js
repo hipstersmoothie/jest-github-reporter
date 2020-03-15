@@ -48,9 +48,7 @@ var GitHubReporter = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log('coverageMap', JSON.stringify(testResult.coverageMap, null, 2));
-                        return [4 /*yield*/, create_check_1.default(testResult, this.config)];
+                    case 0: return [4 /*yield*/, create_check_1.default(testResult, this.config)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
