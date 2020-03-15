@@ -1,10 +1,19 @@
 {
-  "include": ["src/**/*", "test/**/*", "typings/**/*"],
-
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "typings/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
+  ],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true,

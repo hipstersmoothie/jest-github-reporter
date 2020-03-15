@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "eslint src --ext .ts",
+    "test": "jest",
     "test:example": "jest --testLocationInResults example/",
     "release": "auto shipit"
   },
@@ -22,6 +23,7 @@
   "dependencies": {
     "@octokit/rest": "^16.28.7",
     "create-check": "^0.5.0",
+    "istanbul-gh-pr-uncovered": "^1.0.0-beta.1",
     "strip-ansi": "^5.2.0"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "jest": "24.9.0",
     "lint-staged": "9.4.1",
     "prettier": "1.18.2",
+    "ts-jest": "^25.2.1",
     "typescript": "3.6.3"
   },
   "lint-staged": {
@@ -56,8 +59,20 @@
   },
   "jest": {
     "testLocationInResults": true,
-    "reporters": [
-      "./dist/index.js"
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
     ]
   },
   "auto": {
