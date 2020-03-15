@@ -107,6 +107,8 @@ async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResu
     privateKey: getPrivatekey()
   });
 
+  console.log('uncoveredPRFiles', uncoveredPRFiles);
+
 
   uncoveredPRFiles.forEach((ghPrFile: IstanbulGhPRUncovered.UncoveredFile) => {
     const sequences = groupSequences(ghPrFile.lines);
@@ -129,12 +131,17 @@ async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResu
     });
   });
 
+  console.log('uncoveredPRFiles annotations', JSON.stringify(annotations, null, 2));
+
+
   return annotations;
 }
 
 
 
 export default async (results: ReturnType<jest.TestResultsProcessor>, config: GithubReporterConfig) => {
+  console.log('createcheck in jest github reporter config', config);
+
 
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = createAnnotations(results.testResults);
 

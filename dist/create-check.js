@@ -163,6 +163,7 @@ function createUncoveredLinesAnnotations(results) {
                         })];
                 case 1:
                     uncoveredPRFiles = _a.sent();
+                    console.log('uncoveredPRFiles', uncoveredPRFiles);
                     uncoveredPRFiles.forEach(function (ghPrFile) {
                         var sequences = groupSequences_1.default(ghPrFile.lines);
                         // Group the lines together  so that we don't post an annotation for lines that are adjacent to 
@@ -180,6 +181,7 @@ function createUncoveredLinesAnnotations(results) {
                             });
                         });
                     });
+                    console.log('uncoveredPRFiles annotations', JSON.stringify(annotations, null, 2));
                     return [2 /*return*/, annotations];
             }
         });
@@ -190,6 +192,7 @@ exports.default = (function (results, config) { return __awaiter(void 0, void 0,
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                console.log('createcheck in jest github reporter config', config);
                 annotations = createAnnotations(results.testResults);
                 if (!config.failOnUncoveredLines) return [3 /*break*/, 2];
                 return [4 /*yield*/, createUncoveredLinesAnnotations(results)];
