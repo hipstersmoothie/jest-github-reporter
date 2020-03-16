@@ -813,7 +813,7 @@
     once "^1.4.0"
     universal-user-agent "^5.0.0"
 
-"@octokit/rest@16.43.1":
+"@octokit/rest@16.43.1", "@octokit/rest@^16.43.1":
   version "16.43.1"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.43.1.tgz#3b11e7d1b1ac2bbeeb23b08a17df0b20947eda6b"
   integrity sha512-gfFKwRT/wFxq5qlNjnW2dh+qh74XgTQ2B179UX5K1HYCluioWj8Ndbgqw2PVqa1NnVJkGHp2ovMpVn/DImlmkw==
@@ -1843,16 +1843,16 @@ cosmiconfig@^5.2.1:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-check@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.5.0.tgz#179e91819bd6a5fe35dd9994508bed5a30bea1cc"
-  integrity sha512-ZrcvZbv9rC38WWg3+y0goXd7A1RoWEsMdFIxVDVZo5WtvrLDos/1vTb6+ApcwQnk/iisLOC3kY0QSS7TmP1ICg==
+create-check@^0.6.0:
+  version "0.6.33"
+  resolved "https://registry.yarnpkg.com/create-check/-/create-check-0.6.33.tgz#d4168a03bc213705b274cb52fba363d41f809eae"
+  integrity sha512-xClgCOb2S7Uj+ZQoqIGMipZCi8MqN+K2hH4tIIpAEV4uocsQBeYWvBypYDsnlyip52zIG23M3eDjkeefdPvfew==
   dependencies:
     "@octokit/app" "^4.1.0"
-    "@octokit/rest" "^16.28.7"
+    "@octokit/rest" "^16.43.1"
     await-to-js "^2.1.1"
-    env-ci "^4.1.1"
-    execa "^2.0.4"
+    env-ci "^5.0.0"
+    execa "^4.0.0"
     lodash.chunk "^4.2.0"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
@@ -2128,15 +2128,7 @@ enquirer@^2.3.4:
   dependencies:
     ansi-colors "^3.2.1"
 
-env-ci@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-4.1.1.tgz#b8438fc7258a0dc7a4f4c4816de730767946a718"
-  integrity sha512-eTgpkALDeYRGNhYM2fO9LKsWDifoUgKL7hxpPZqFMP2IU7f+r89DtKqCmk3yQB/jxS8CmZTfKnWO5TiIDFs9Hw==
-  dependencies:
-    execa "^1.0.0"
-    java-properties "^1.0.0"
-
-env-ci@^5.0.1:
+env-ci@^5.0.0, env-ci@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-5.0.2.tgz#48b6687f8af8cdf5e31b8fcf2987553d085249d9"
   integrity sha512-Xc41mKvjouTXD3Oy9AqySz1IeyvJvHZ20Twf5ZLYbNpPPIuCnL/qHCmNlD01LoNy0JTunw9HPYVptD19Ac7Mbw==
@@ -2426,7 +2418,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.3, execa@^2.0.4:
+execa@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.4.tgz#2f5cc589c81db316628627004ea4e37b93391d8e"
   integrity sha512-VcQfhuGD51vQUQtKIq2fjGDLDbL6N1DTQVpYzxZ7LPIXw3HqTuIz6uxRmpV1qf8i31LHf2kjiaGI+GdHwRgbnQ==
