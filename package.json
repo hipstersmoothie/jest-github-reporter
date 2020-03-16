@@ -25,7 +25,6 @@
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
-    "@types/jest": "24.9.1",
     "@types/node": "12.12.30",
     "@typescript-eslint/eslint-plugin": "2.24.0",
     "@typescript-eslint/parser": "2.24.0",
@@ -40,10 +39,13 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.2",
     "husky": "4.2.3",
-    "jest": "24.9.0",
+    "jest": "^25.1.0",
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
     "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "jest": ">= 24.x"
   },
   "lint-staged": {
     "*.{js,css,md}": [
@@ -57,6 +59,7 @@
   "jest": {
     "testLocationInResults": true,
     "reporters": [
+      "default",
       "./dist/index.js"
     ]
   },
