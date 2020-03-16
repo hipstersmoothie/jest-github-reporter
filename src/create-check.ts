@@ -1,3 +1,7 @@
+// Only Types
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { TestResult, AggregatedResult } from '@jest/reporters';
+
 import path from 'path';
 import stripAnsi from 'strip-ansi';
 import Octokit from '@octokit/rest';
@@ -51,7 +55,7 @@ interface Location {
   line: number;
 }
 
-function createAnnotations(results: jest.TestResult[]) {
+function createAnnotations(results: TestResult[]) {
   const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
 
   for (const result of results) {
@@ -69,7 +73,9 @@ function createAnnotations(results: jest.TestResult[]) {
             const numbers = message.match(
               new RegExp(`${result.testFilePath}:(\\d+):\\d+`)
             );
-            const start_line = numbers ? Number(numbers[1]) : location.line || 0;
+            const start_line = numbers
+              ? Number(numbers[1])
+              : location.line || 0;
 
             annotations.push({
               path: path.relative(process.cwd(), testFilePath),
@@ -87,7 +93,7 @@ function createAnnotations(results: jest.TestResult[]) {
   return annotations;
 }
 
-export default (results: ReturnType<jest.TestResultsProcessor>) =>
+export default (results: AggregatedResult) =>
   createCheck({
     tool: 'Jest',
     name: 'Test',
