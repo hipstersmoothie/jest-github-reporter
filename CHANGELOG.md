@@ -1,3 +1,22 @@
+# v0.4.1 (Mon Mar 16 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update dependency eslint-plugin-jsdoc to v22 [#85](https://github.com/hipstersmoothie/jest-github-reporter/pull/85) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency auto to v9 [#75](https://github.com/hipstersmoothie/jest-github-reporter/pull/75) ([@hipstersmoothie](https://github.com/hipstersmoothie) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 3
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.0 (Mon Mar 16 2020)
 
 #### 🚀  Enhancement
