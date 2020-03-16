@@ -1,3 +1,22 @@
+# v0.4.2 (Mon Mar 16 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update dependency eslint-plugin-import to v2.20.1 [#69](https://github.com/hipstersmoothie/jest-github-reporter/pull/69) ([@renovate-bot](https://github.com/renovate-bot) [@hipstersmoothie](https://github.com/hipstersmoothie) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency husky to v4 [#86](https://github.com/hipstersmoothie/jest-github-reporter/pull/86) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 3
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.1 (Mon Mar 16 2020)
 
 :tada: This release contains work from a new contributor! :tada:
