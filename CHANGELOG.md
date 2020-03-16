@@ -1,3 +1,20 @@
+# v0.4.4 (Mon Mar 16 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update dependency create-check to ^0.6.0 [#77](https://github.com/hipstersmoothie/jest-github-reporter/pull/77) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 2
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.3 (Mon Mar 16 2020)
 
 :tada: This release contains work from a new contributor! :tada:
