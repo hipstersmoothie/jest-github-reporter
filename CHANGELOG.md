@@ -1,3 +1,32 @@
+# v0.4.0 (Mon Mar 16 2020)
+
+#### 🚀  Enhancement
+
+- Drop node 8 support [#60](https://github.com/hipstersmoothie/jest-github-reporter/pull/60) ([@renovate-bot](https://github.com/renovate-bot) [@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### 🔩 Dependency Updates
+
+- Update dependency eslint-config-airbnb-base to v14.1.0 [#84](https://github.com/hipstersmoothie/jest-github-reporter/pull/84) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-plugin-prettier to v3.1.2 [#72](https://github.com/hipstersmoothie/jest-github-reporter/pull/72) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency prettier to v1.19.1 [#64](https://github.com/hipstersmoothie/jest-github-reporter/pull/64) ([@renovate-bot](https://github.com/renovate-bot))
+- Update typescript-eslint monorepo to v2.24.0 [#56](https://github.com/hipstersmoothie/jest-github-reporter/pull/56) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency @types/jest to v24.9.1 [#59](https://github.com/hipstersmoothie/jest-github-reporter/pull/59) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency strip-ansi to v6 [#65](https://github.com/hipstersmoothie/jest-github-reporter/pull/65) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint to v6.8.0 [#61](https://github.com/hipstersmoothie/jest-github-reporter/pull/61) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency typescript to v3.8.3 [#58](https://github.com/hipstersmoothie/jest-github-reporter/pull/58) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency lint-staged to v9.5.0 [#57](https://github.com/hipstersmoothie/jest-github-reporter/pull/57) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-config-prettier to v6.10.0 [#55](https://github.com/hipstersmoothie/jest-github-reporter/pull/55) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency husky to v3.1.0 [#52](https://github.com/hipstersmoothie/jest-github-reporter/pull/52) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency eslint-plugin-jsdoc to v15.12.2 [#53](https://github.com/hipstersmoothie/jest-github-reporter/pull/53) ([@renovate-bot](https://github.com/renovate-bot))
+- Update dependency @types/node to v12.12.30 [#51](https://github.com/hipstersmoothie/jest-github-reporter/pull/51) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 2
+
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.3.6 (Fri Feb 28 2020)
 
 #### 🐛  Bug Fix
