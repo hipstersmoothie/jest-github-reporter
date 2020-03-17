@@ -20,7 +20,7 @@
     "annotation"
   ],
   "dependencies": {
-    "@octokit/rest": "^16.28.7",
+    "@octokit/rest": "^17.0.0",
     "create-check": "^0.6.0",
     "strip-ansi": "^6.0.0"
   },
