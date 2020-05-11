@@ -1,6 +1,6 @@
 {
   "name": "jest-github-reporter",
-  "version": "0.4.6",
+  "version": "0.4.8",
   "description": "Report tests failures from Jest in GitHub.",
   "main": "dist/index.js",
   "repository": "hipstersmoothie/jest-github-reporter",
