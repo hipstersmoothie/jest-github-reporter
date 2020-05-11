@@ -1,3 +1,15 @@
+# v1.0.0 (Mon May 11 2020)
+
+#### 💥 Breaking Change
+
+- Force major: drop node 8 [#106](https://github.com/hipstersmoothie/jest-github-reporter/pull/106) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.4.7 (Mon May 11 2020)
 
 :tada: This release contains work from a new contributor! :tada:
