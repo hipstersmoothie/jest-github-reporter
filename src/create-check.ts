@@ -4,8 +4,7 @@ import { TestResult, AggregatedResult } from '@jest/reporters';
 
 import path from 'path';
 import stripAnsi from 'strip-ansi';
-import Octokit from '@octokit/rest';
-import createCheck from 'create-check';
+import createCheck, { Annotation } from 'create-check';
 
 const APP_ID = 38833;
 /**
@@ -56,7 +55,7 @@ interface Location {
 }
 
 function createAnnotations(results: TestResult[]) {
-  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
+  const annotations: Annotation[] = [];
 
   for (const result of results) {
     const { testFilePath, testResults } = result;
