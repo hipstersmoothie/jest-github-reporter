@@ -1,3 +1,23 @@
+# v0.4.6 (Mon May 11 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update typescript-eslint monorepo to v2.32.0 [#94](https://github.com/hipstersmoothie/jest-github-reporter/pull/94) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency husky to v4.2.5 [#97](https://github.com/hipstersmoothie/jest-github-reporter/pull/97) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint-plugin-import to v2.20.2 [#96](https://github.com/hipstersmoothie/jest-github-reporter/pull/96) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency lint-staged to v10 [#89](https://github.com/hipstersmoothie/jest-github-reporter/pull/89) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 2
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.5 (Mon May 11 2020)
 
 :tada: This release contains work from a new contributor! :tada:
