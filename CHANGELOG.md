@@ -1,3 +1,27 @@
+# v0.4.5 (Mon May 11 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update dependency eslint to v7 [#101](https://github.com/hipstersmoothie/jest-github-reporter/pull/101) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint-plugin-prettier to v3.1.3 [#99](https://github.com/hipstersmoothie/jest-github-reporter/pull/99) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency @types/node to v12.12.38 [#95](https://github.com/hipstersmoothie/jest-github-reporter/pull/95) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint-config-prettier to v6.11.0 [#93](https://github.com/hipstersmoothie/jest-github-reporter/pull/93) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency auto to v9.31.2 [#91](https://github.com/hipstersmoothie/jest-github-reporter/pull/91) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency prettier to v2 [#92](https://github.com/hipstersmoothie/jest-github-reporter/pull/92) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint-plugin-jsdoc to v22.2.0 [#90](https://github.com/hipstersmoothie/jest-github-reporter/pull/90) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Pin dependency jest to 25.1.0 [#88](https://github.com/hipstersmoothie/jest-github-reporter/pull/88) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 2
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.4 (Mon Mar 16 2020)
 
 :tada: This release contains work from a new contributor! :tada:
