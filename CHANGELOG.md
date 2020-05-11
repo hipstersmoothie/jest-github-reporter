@@ -1,3 +1,21 @@
+# v0.4.7 (Mon May 11 2020)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot)), for all your work!
+
+#### 🐛 Bug Fix
+
+- Update dependency jest to v26 [#104](https://github.com/hipstersmoothie/jest-github-reporter/pull/104) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint-plugin-jsdoc to v25 [#102](https://github.com/hipstersmoothie/jest-github-reporter/pull/102) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 2
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.6 (Mon May 11 2020)
 
 :tada: This release contains work from a new contributor! :tada:
