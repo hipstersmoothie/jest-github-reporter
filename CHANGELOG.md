@@ -1,3 +1,15 @@
+# v1.0.1 (Wed May 27 2020)
+
+#### 🐛 Bug Fix
+
+- Update README.md correct usage instructions [#117](https://github.com/hipstersmoothie/jest-github-reporter/pull/117) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v1.0.0 (Mon May 11 2020)
 
 #### 💥 Breaking Change
