@@ -28,7 +28,7 @@ Then just run jest and it will test errors PRs!
 
 ```json
 {
-  "reporters": ["default", "./dist/index.js"]
+  "reporters": ["default", "jest-github-reporter"]
 }
 ```
 
