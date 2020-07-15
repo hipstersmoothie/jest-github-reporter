@@ -22,8 +22,8 @@
   ],
   "dependencies": {
     "@octokit/rest": "^16.28.7",
-    "istanbul-gh-pr-uncovered": "^1.0.0-beta.1",
-    "create-check": "^0.6.1",
+    "create-check": "^0.6.36",
+    "istanbul-gh-pr-uncovered": "^1.0.0-beta.2",
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
@@ -41,9 +41,10 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.3",
     "husky": "4.2.5",
-    "jest": "26.0.1",
+    "jest": "^26.1.0",
     "lint-staged": "10.2.2",
     "prettier": "2.0.5",
+    "ts-jest": "^26.1.2",
     "typescript": "3.8.3"
   },
   "peerDependencies": {
@@ -60,6 +61,8 @@
   },
   "jest": {
     "testLocationInResults": true,
+    "preset": "ts-jest",
+    "testEnvironment": "node",
     "reporters": [
       "default",
       "./dist/index.js"

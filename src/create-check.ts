@@ -4,10 +4,10 @@ import { TestResult, AggregatedResult } from '@jest/reporters';
 
 import path from 'path';
 import stripAnsi from 'strip-ansi';
-import Octokit from '@octokit/rest';
 import getUncoveredPrFiles from 'istanbul-gh-pr-uncovered';
-import groupSequences from './groupSequences';
 import createCheck, { Annotation } from 'create-check';
+import groupSequences from './groupSequences';
+import { GithubReporterConfig } from './types';
 
 const APP_ID = 38833;
 /**
@@ -105,7 +105,7 @@ function createAnnotations(results: TestResult[]) {
   return annotations;
 }
 
-async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResultsProcessor>) {
+async function createUncoveredLinesAnnotations(results: AggregatedResult) {
   const annotations: Annotation[] = [];
 
   const uncoveredPRFiles = await getUncoveredPrFiles({
@@ -140,7 +140,7 @@ async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResu
 
 
 
-export default async (results: ReturnType<jest.TestResultsProcessor>, config: GithubReporterConfig) => {
+export default async (results: AggregatedResult, config: GithubReporterConfig) => {
   const annotations: Annotation[] = createAnnotations(results.testResults);
 
   if (config.failOnUncoveredLines) {
@@ -148,7 +148,7 @@ export default async (results: ReturnType<jest.TestResultsProcessor>, config: Gi
     annotations.push(...uncoveredLinesAnnotations);
   }
 
- return createCheck({
+  return createCheck({
     tool: 'Jest',
     name: 'Test',
     annotations,
