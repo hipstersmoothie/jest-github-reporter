@@ -8,7 +8,7 @@ export default (numbers: ReadonlyArray<number>) => {
     return [];
   }
 
-  return numbers.reduce((array: Array<Array<number>>, number, index) => {
+  return numbers.reduce((array: number[][], number, index) => {
     if (index === 0 || number !== numbers[index - 1] + 1) {
       array.push([]);
     }
