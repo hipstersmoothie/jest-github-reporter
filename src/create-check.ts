@@ -1,9 +1,13 @@
+// Only Types
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { TestResult, AggregatedResult } from '@jest/reporters';
+
 import path from 'path';
 import stripAnsi from 'strip-ansi';
 import Octokit from '@octokit/rest';
-import createCheck from 'create-check';
 import getUncoveredPrFiles from 'istanbul-gh-pr-uncovered';
 import groupSequences from './groupSequences';
+import createCheck, { Annotation } from 'create-check';
 
 const APP_ID = 38833;
 /**
@@ -62,8 +66,9 @@ function getPrivatekey() {
 }
 
 
-function createAnnotations(results: jest.TestResult[]) {
-  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
+
+function createAnnotations(results: TestResult[]) {
+  const annotations: Annotation[] = [];
 
   for (const result of results) {
     const { testFilePath, testResults } = result;
@@ -80,7 +85,9 @@ function createAnnotations(results: jest.TestResult[]) {
             const numbers = message.match(
               new RegExp(`${result.testFilePath}:(\\d+):\\d+`)
             );
-            const start_line = numbers ? Number(numbers[1]) : location.line || 0;
+            const start_line = numbers
+              ? Number(numbers[1])
+              : location.line || 0;
 
             annotations.push({
               path: path.relative(process.cwd(), testFilePath),
@@ -99,7 +106,7 @@ function createAnnotations(results: jest.TestResult[]) {
 }
 
 async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResultsProcessor>) {
-  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = [];
+  const annotations: Annotation[] = [];
 
   const uncoveredPRFiles = await getUncoveredPrFiles({
     coverageMap: results.coverageMap,
@@ -134,14 +141,14 @@ async function createUncoveredLinesAnnotations(results: ReturnType<jest.TestResu
 
 
 export default async (results: ReturnType<jest.TestResultsProcessor>, config: GithubReporterConfig) => {
-  const annotations: Octokit.ChecksCreateParamsOutputAnnotations[] = createAnnotations(results.testResults);
+  const annotations: Annotation[] = createAnnotations(results.testResults);
 
   if (config.failOnUncoveredLines) {
     const uncoveredLinesAnnotations = await createUncoveredLinesAnnotations(results);
     annotations.push(...uncoveredLinesAnnotations);
   }
 
-  return createCheck({
+ return createCheck({
     tool: 'Jest',
     name: 'Test',
     annotations,

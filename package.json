@@ -1,7 +1,7 @@
 {
   "name": "jest-github-reporter",
-  "version": "0.3.6",
-  "description": "Report tests failures from Jest in GitHub.",
+  "version": "1.0.1",
+  "description": "Report tests failures from Jest in GitHub",
   "main": "dist/index.js",
   "repository": "hipstersmoothie/jest-github-reporter",
   "author": "Andrew Lisowski <lisowski54@gmail.com>",
@@ -22,31 +22,32 @@
   ],
   "dependencies": {
     "@octokit/rest": "^16.28.7",
-    "create-check": "^0.5.0",
     "istanbul-gh-pr-uncovered": "^1.0.0-beta.1",
-    "strip-ansi": "^5.2.0"
+    "create-check": "^0.6.1",
+    "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.8",
-    "@typescript-eslint/eslint-plugin": "2.3.2",
-    "@typescript-eslint/parser": "2.3.2",
-    "auto": "7.6.2",
-    "auto-config-hipstersmoothie": "1.0.4",
-    "eslint": "6.5.1",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-config-prettier": "6.3.0",
-    "eslint-config-xo": "0.27.1",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jsdoc": "15.9.5",
+    "@types/node": "12.12.38",
+    "@typescript-eslint/eslint-plugin": "2.32.0",
+    "@typescript-eslint/parser": "2.32.0",
+    "auto": "9.31.2",
+    "auto-config-hipstersmoothie": "3.0.23",
+    "eslint": "7.0.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-xo": "0.29.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jsdoc": "25.2.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.1",
-    "husky": "3.0.7",
-    "jest": "24.9.0",
-    "lint-staged": "9.4.1",
-    "prettier": "1.18.2",
-    "ts-jest": "^25.2.1",
-    "typescript": "3.6.3"
+    "eslint-plugin-prettier": "3.1.3",
+    "husky": "4.2.5",
+    "jest": "26.0.1",
+    "lint-staged": "10.2.2",
+    "prettier": "2.0.5",
+    "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "jest": ">= 24.x"
   },
   "lint-staged": {
     "*.{js,css,md}": [
@@ -59,20 +60,9 @@
   },
   "jest": {
     "testLocationInResults": true,
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
+    "reporters": [
+      "default",
+      "./dist/index.js"
     ]
   },
   "auto": {

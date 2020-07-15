@@ -28,10 +28,8 @@ Then just run jest and it will test errors PRs!
 
 ```json
 {
-  "reporters": [
-    "default", 
-    "jest-github-reporter"
-  ]
+
+  "reporters": ["default", "jest-github-reporter"]
 }
 ```
 
