@@ -33,8 +33,10 @@ Then just run jest and it will test errors PRs!
 ```
 
 ```sh
-jest file.js
+jest --testLocationInResults file.js
 ```
+
+(The `--testLocationInResults` flag is needed to get the in-file checks/annotations, otherwise only the summary comment is shown.)
 
 ## Using your own GitHub App
 
