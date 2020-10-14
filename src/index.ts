@@ -3,14 +3,20 @@
 import { AggregatedResult, Test } from '@jest/reporters';
 
 import createCheck from './create-check';
+import { GithubReporterConfig } from './types';
 
 class GitHubReporter {
-  // eslint-disable-next-line class-methods-use-this
+  private config: GithubReporterConfig;
+
+  constructor(globalConfig: jest.GlobalConfig, config: GithubReporterConfig) {
+    this.config = config;
+  }
+
   async onRunComplete(
     contexts: Set<Test['context']>,
     testResult: AggregatedResult
   ) {
-    await createCheck(testResult);
+    await createCheck(testResult, this.config);
   }
 }
 

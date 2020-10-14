@@ -28,9 +28,29 @@ Then just run jest and it will test errors PRs!
 
 ```json
 {
+
   "reporters": ["default", "jest-github-reporter"]
 }
 ```
+
+### Additional Options
+
+You may pass in additional options the the github reporter like so
+
+```json
+{
+  "reporters": [
+    "default", 
+    ["jest-github-reporter", { "failOnUncoveredLines": true }]
+  ]
+}
+```
+
+#### failOnUncoveredLines
+
+If set to true, the reporter will comment on lines which were added in the pull request but
+have no code coverage. If false, then uncovered lines will not fail the build.
+
 
 ```sh
 jest --testLocationInResults file.js

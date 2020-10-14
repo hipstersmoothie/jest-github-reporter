@@ -4,7 +4,10 @@ import { TestResult, AggregatedResult } from '@jest/reporters';
 
 import path from 'path';
 import stripAnsi from 'strip-ansi';
+import getUncoveredPrFiles from 'istanbul-gh-pr-uncovered';
 import createCheck, { Annotation } from 'create-check';
+import groupSequences from './groupSequences';
+import { GithubReporterConfig } from './types';
 
 const APP_ID = 38833;
 /**
@@ -54,6 +57,16 @@ interface Location {
   line: number;
 }
 
+function getAppId() {
+  return process.env.JEST_APP_ID ? Number(process.env.JEST_APP_ID) : APP_ID;
+}
+
+function getPrivatekey() {
+  return process.env.JEST_PRIVATE_KEY || PRIVATE_KEY;
+}
+
+
+
 function createAnnotations(results: TestResult[]) {
   const annotations: Annotation[] = [];
 
@@ -92,12 +105,56 @@ function createAnnotations(results: TestResult[]) {
   return annotations;
 }
 
-export default (results: AggregatedResult) =>
-  createCheck({
+async function createUncoveredLinesAnnotations(results: AggregatedResult) {
+  const annotations: Annotation[] = [];
+
+  const uncoveredPRFiles = await getUncoveredPrFiles({
+    coverageMap: results.coverageMap,
+    appId: getAppId(),
+    privateKey: getPrivatekey()
+  });
+
+  uncoveredPRFiles.forEach((ghPrFile: IstanbulGhPRUncovered.UncoveredFile) => {
+    const sequences = groupSequences(ghPrFile.lines);
+
+    // Group the lines together  so that we don't post an annotation for lines that are adjacent to 
+    // each other.
+    sequences.forEach(sequenceArray => {
+      const startLine = sequenceArray[0];
+      const endLine = sequenceArray[sequenceArray.length - 1];
+
+      annotations.push({
+        path: path.relative(process.cwd(), ghPrFile.filename),
+        start_line: startLine,
+        end_line: endLine,
+        annotation_level: 'failure',
+        message: startLine === endLine ? `This line is uncovered by tests.`
+          : `Lines ${startLine}-${endLine} are uncovered by tests.`
+      });
+
+    });
+  });
+
+  return annotations;
+}
+
+
+
+export default async (results: AggregatedResult, config: GithubReporterConfig) => {
+  const annotations: Annotation[] = createAnnotations(results.testResults);
+
+  if (config.failOnUncoveredLines) {
+    const uncoveredLinesAnnotations = await createUncoveredLinesAnnotations(results);
+    annotations.push(...uncoveredLinesAnnotations);
+  }
+
+  return createCheck({
     tool: 'Jest',
     name: 'Test',
-    annotations: createAnnotations(results.testResults),
-    errorCount: results.numFailedTests,
-    appId: process.env.JEST_APP_ID ? Number(process.env.JEST_APP_ID) : APP_ID,
-    privateKey: process.env.JEST_PRIVATE_KEY || PRIVATE_KEY
+    annotations,
+    errorCount: annotations.length,
+    appId: getAppId(),
+    privateKey: getPrivatekey()
   });
+}
+
