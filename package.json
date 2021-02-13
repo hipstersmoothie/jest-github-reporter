@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@octokit/rest": "^16.28.7",
-    "create-check": "^0.6.1",
+    "create-check": "^0.6.40",
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {

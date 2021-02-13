@@ -72,3 +72,13 @@ Once you have generated a key, open the file that is downloaded and copy to text
 ### 4. Set `GH_API` (enterprise only)
 
 To get this package to work on github enterprise instances you will need to set the `GH_API` environment variable to a url pointing towards your enterprise GitHub's API.
+
+If you need specific preview apis for your enterprise server, you can set the `GH_PREVIEWS` environment variable.
+
+Example:
+
+```
+GH_PREVIEWS=eye-scream-preview,machine-man-preview
+```
+
+
