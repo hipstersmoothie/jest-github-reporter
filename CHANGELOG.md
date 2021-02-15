@@ -1,3 +1,34 @@
+# v1.0.2 (Mon Feb 15 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: Theryn Groetken ([@therynamo](https://github.com/therynamo))
+
+:heart: Øyvind Smestad ([@osmestad](https://github.com/osmestad))
+
+#### 🐛 Bug Fix
+
+- chore: Update Create Check [#142](https://github.com/hipstersmoothie/jest-github-reporter/pull/142) ([@therynamo](https://github.com/therynamo))
+
+#### ⚠️ Pushed to `master`
+
+- upgrade typescript ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- upgrade auto ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### 📝 Documentation
+
+- Improve docs on how to get the test result details reported [#138](https://github.com/hipstersmoothie/jest-github-reporter/pull/138) ([@osmestad](https://github.com/osmestad))
+
+#### Authors: 3
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- Øyvind Smestad ([@osmestad](https://github.com/osmestad))
+- Theryn Groetken ([@therynamo](https://github.com/therynamo))
+
+---
+
 # v1.0.1 (Wed May 27 2020)
 
 #### 🐛 Bug Fix
