@@ -1393,7 +1393,7 @@ author-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/author-regex/-/author-regex-1.0.0.tgz#d08885be6b9bbf9439fe087c76287245f0a81450"
   integrity sha1-0IiFvmubv5Q5/gh8dihyRfCoFFA=
 
-auto-config-hipstersmoothie@^4.0.0:
+auto-config-hipstersmoothie@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/auto-config-hipstersmoothie/-/auto-config-hipstersmoothie-4.0.0.tgz#0acdcc7c5eb1ef59832668baed1bce7c3f72f259"
   integrity sha512-uQrV4H/08LELeLiF720xt1teQAnm9x925d/TxqnuMbcCKjZfyvxYA+WLe4hic89q60ovlJqRDLrB7TEj3lpnyg==
@@ -1404,7 +1404,7 @@ auto-config-hipstersmoothie@^4.0.0:
     "@auto-it/pr-body-labels" "^10.2.3"
     "@auto-it/released" "^10.2.3"
 
-auto@^10.16.5:
+auto@10.16.5:
   version "10.16.5"
   resolved "https://registry.yarnpkg.com/auto/-/auto-10.16.5.tgz#0a71545d2c2a81db2a894ac1786b27058264a61b"
   integrity sha512-EXILPWYhvYz+E+JMrz0Bbj1eyfQuQKyMfCTb46+8A2EoI3Dk5bi5N3kju8YHji2SCapuQ/N8+Ag2Ln/f8YpXHQ==
@@ -5898,7 +5898,7 @@ typescript-memoize@^1.0.0-alpha.3:
   dependencies:
     core-js "2.4.1"
 
-typescript@^4.1.5:
+typescript@4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.5.tgz#123a3b214aaff3be32926f0d8f1f6e704eb89a72"
   integrity sha512-6OSu9PTIzmn9TCDiovULTnET6BgXtDYL4Gg4szY+cGsc3JP1dQL8qvE8kShTRx1NIw4Q9IBHlwODjkjWEtMUyA==
