@@ -95,7 +95,7 @@ function createAnnotations(results: TestResult[]) {
 export default (results: AggregatedResult) =>
   createCheck({
     tool: 'Jest',
-    name: 'Test',
+    name: process.env.GITHUB_CHECK_NAME || 'Test',
     annotations: createAnnotations(results.testResults),
     errorCount: results.numFailedTests,
     appId: process.env.JEST_APP_ID ? Number(process.env.JEST_APP_ID) : APP_ID,
