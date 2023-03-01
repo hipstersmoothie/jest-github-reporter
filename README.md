@@ -83,4 +83,4 @@ GH_PREVIEWS=eye-scream-preview,machine-man-preview
 
 ### 5. (optional) Set `GH_CHECK_NAME`
 
-If the default check name conflicts with something, you can override it by passing `GITHUB_CHECK_NAME` environment variable.
+If the default check name conflicts with something, you can override it by passing `GH_CHECK_NAME` environment variable.
