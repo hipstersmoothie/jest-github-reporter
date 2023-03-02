@@ -1,3 +1,15 @@
+# v1.1.0 (Thu Mar 02 2023)
+
+#### 🚀 Enhancement
+
+- Allow to pass check name environment variable [#150](https://github.com/hipstersmoothie/jest-github-reporter/pull/150) ([@PaulGiletich](https://github.com/PaulGiletich))
+
+#### Authors: 1
+
+- [@PaulGiletich](https://github.com/PaulGiletich)
+
+---
+
 # v1.0.2 (Mon Feb 15 2021)
 
 :tada: This release contains work from new contributors! :tada:

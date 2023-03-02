@@ -98,7 +98,7 @@ async function createAnnotations(results: TestResult[]) {
 export default async (results: AggregatedResult) =>
   createCheck({
     tool: 'Jest',
-    name: 'Test',
+    name: process.env.GH_CHECK_NAME || 'Test',
     annotations: await createAnnotations(results.testResults),
     errorCount: results.numFailedTests,
     appId: process.env.JEST_APP_ID ? Number(process.env.JEST_APP_ID) : APP_ID,
