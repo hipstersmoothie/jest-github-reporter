@@ -5,6 +5,7 @@ import { TestResult, AggregatedResult } from '@jest/reporters';
 import path from 'path';
 import stripAnsi from 'strip-ansi';
 import createCheck, { Annotation } from 'create-check';
+import execa from 'execa';
 
 const APP_ID = 38833;
 /**
@@ -54,7 +55,9 @@ interface Location {
   line: number;
 }
 
-function createAnnotations(results: TestResult[]) {
+async function createAnnotations(results: TestResult[]) {
+  const gitRoot = (await execa('git', ['rev-parse', '--show-toplevel'])).stdout;
+
   const annotations: Annotation[] = [];
 
   for (const result of results) {
@@ -77,7 +80,7 @@ function createAnnotations(results: TestResult[]) {
               : location.line || 0;
 
             annotations.push({
-              path: path.relative(process.cwd(), testFilePath),
+              path: path.relative(gitRoot, testFilePath),
               start_line,
               end_line: start_line,
               annotation_level: 'failure',
@@ -96,7 +99,7 @@ export default (results: AggregatedResult) =>
   createCheck({
     tool: 'Jest',
     name: 'Test',
-    annotations: createAnnotations(results.testResults),
+    annotations: await createAnnotations(results.testResults),
     errorCount: results.numFailedTests,
     appId: process.env.JEST_APP_ID ? Number(process.env.JEST_APP_ID) : APP_ID,
     privateKey: process.env.JEST_PRIVATE_KEY || PRIVATE_KEY
