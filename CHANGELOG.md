@@ -1,3 +1,15 @@
+# v1.1.1 (Thu Mar 02 2023)
+
+#### 🐛 Bug Fix
+
+- annotate files relative to git root, instead of cwd, so that it works in nested packages in monorepos [#151](https://github.com/hipstersmoothie/jest-github-reporter/pull/151) ([@PaulGiletich](https://github.com/PaulGiletich))
+
+#### Authors: 1
+
+- [@PaulGiletich](https://github.com/PaulGiletich)
+
+---
+
 # v1.1.0 (Thu Mar 02 2023)
 
 #### 🚀 Enhancement
