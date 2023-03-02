@@ -5,7 +5,7 @@ import { TestResult, AggregatedResult } from '@jest/reporters';
 import path from 'path';
 import stripAnsi from 'strip-ansi';
 import createCheck, { Annotation } from 'create-check';
-import execa from 'execa';
+import { execa } from 'execa';
 
 const APP_ID = 38833;
 /**
@@ -95,7 +95,7 @@ async function createAnnotations(results: TestResult[]) {
   return annotations;
 }
 
-export default (results: AggregatedResult) =>
+export default async (results: AggregatedResult) =>
   createCheck({
     tool: 'Jest',
     name: 'Test',
