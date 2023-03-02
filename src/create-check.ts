@@ -56,7 +56,7 @@ interface Location {
 }
 
 async function createAnnotations(results: TestResult[]) {
-  const gitRoot = (await execa('git', ['rev-parse', '--show-toplevel'])).stdout;
+  const repoRoot = (await execa('git', ['rev-parse', '--show-toplevel'])).stdout;
 
   const annotations: Annotation[] = [];
 
@@ -80,7 +80,7 @@ async function createAnnotations(results: TestResult[]) {
               : location.line || 0;
 
             annotations.push({
-              path: path.relative(gitRoot, testFilePath),
+              path: path.relative(repoRoot, testFilePath),
               start_line,
               end_line: start_line,
               annotation_level: 'failure',
